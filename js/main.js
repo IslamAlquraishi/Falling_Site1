@@ -1,36 +1,41 @@
-let header = document.getElementById("header");
-
-// Onload Up
-onload = function () {
-  SpanOne.style.opacity = "1";
-  right.style.opacity = ".5";
-};
-
-// // All Scroll In Index
 onscroll = function () {
+  // Scroll For Background
+  head_Bg();
+
+  // Scroll Cards
+  {
+    // For Services
+    cards();
+    // For Portfolio
+    cardFolio();
+    // For Live
+    cardLive();
+    // For Progress Span
+    skills_Span();
+  }
+
   // Counter For Goals
   if (window.scrollY + 100 >= SectionWork.offsetTop) {
     if (started == false) {
       goals.forEach((goal) => {
-        CountGoals(goal);
+        countGoals(goal);
       });
     }
     started = true;
   }
 
-  // Scroll Window for Show Card Portfolio
-  CardFolio();
+  // Start Scroll Up
+  this.scrollY >= 2500 ? up.classList.add("show") : up.classList.remove("show");
 
-  // Scroll Window for Show Card Live
-  CardLive();
+  // Function Scroll Up
+  Up();
 
-  // The Scroll Make Width For Span
-  Skills_Span();
+  // End Window Scroll
+};
 
-  // Effict Show Card
-  Cards();
-
-  // Scroll Background
+// Scroll For Background
+function head_Bg() {
+  let header = document.getElementById("header");
   if (scrollY <= 125) {
     // 0%
     header.style.background = "none";
@@ -44,18 +49,37 @@ onscroll = function () {
     // 100%
     header.style.background = "#0303d7";
   }
+}
 
-  // Start Scroll Up
-  this.scrollY >= 2500 ? up.classList.add("show") : up.classList.remove("show");
+// Counter For Goals
+let SectionWork = document.getElementById("work");
+let goals = document.querySelectorAll(".stat .goal");
+let started = false;
 
-  // Function Scroll Up
-  Up();
+// Function Counter For Goals
+function countGoals(e) {
+  let goal = e.dataset.goal;
+  let count = setInterval(() => {
+    e.textContent++;
+    if (e.textContent == goal) {
+      clearInterval(count);
+    }
+  }, 1500 / goal);
+}
 
-  // End Window Scroll
-};
+// Border Botton For Bar Link
+let links = document.querySelectorAll(".list .link");
+links.forEach((link) => {
+  link.addEventListener("click", () => {
+    links.forEach((l) => {
+      l.classList.remove("show");
+    });
+    link.classList.add("show");
+  });
+});
 
-// The Scroll Make Width For Span
-function Skills_Span() {
+// The Scroll Progress Width For Span
+function skills_Span() {
   let OurSkills = document.getElementById("skills");
 
   let SkillsOffSetTop = OurSkills.offsetTop;
@@ -63,7 +87,10 @@ function Skills_Span() {
   let windowHeight = window.innerHeight;
   let windowScrollTop = window.pageYOffset;
 
-  if (windowScrollTop > SkillsOffSetTop + SkillsOuterHeight - windowHeight) {
+  if (
+    windowScrollTop >
+    SkillsOffSetTop - 100 + SkillsOuterHeight - windowHeight
+  ) {
     let AllSkills_Span = document.querySelectorAll(
       ".card .skill-progress span"
     );
@@ -79,228 +106,153 @@ function Skills_Span() {
   }
 }
 
-// Effict Show Card
-function Cards() {
-  let Card = [
-    document.getElementById("card1"),
-    document.getElementById("card2"),
-    document.getElementById("card3"),
-    document.getElementById("card4"),
-    document.getElementById("card5"),
-    document.getElementById("card6"),
-  ];
-  // Function Small
-  function Crad1() {
-    if (scrollY > 1600) {
-      Card[0].classList.add("card-show_sm");
-    } else {
-      Card[0].classList.remove("card-show_sm");
+// Scroll Window for Show Card Services
+function cards() {
+  let serviceCards = document.querySelectorAll(".services-content .card");
+  serviceCards.forEach((Card) => {
+    let CardOffSetTop = Card.offsetTop;
+    let CardOuterHeight = Card.offsetHeight;
+    let windowHeight = window.innerHeight;
+    let windowScrollTop = window.pageYOffset;
+
+    if (
+      windowScrollTop >
+      CardOffSetTop + 1600 + CardOuterHeight - windowHeight
+    ) {
+      Card.classList.add("show");
     }
-    if (scrollY > 1900) {
-      Card[1].classList.add("card-show_sm");
-    } else {
-      Card[1].classList.remove("card-show_sm");
-    }
-    if (scrollY > 2200) {
-      Card[2].classList.add("card-show_sm");
-    } else {
-      Card[2].classList.remove("card-show_sm");
-    }
-    if (scrollY > 2500) {
-      Card[3].classList.add("card-show_sm");
-    } else {
-      Card[3].classList.remove("card-show_sm");
-    }
-    if (scrollY > 2800) {
-      Card[4].classList.add("card-show_sm");
-    } else {
-      Card[4].classList.remove("card-show_sm");
-    }
-    if (scrollY > 3200) {
-      Card[5].classList.add("card-show_sm");
-    } else {
-      Card[5].classList.remove("card-show_sm");
-    }
-  }
-  // Function Mediam
-  function Crad2() {
-    if (scrollY > 1400) {
-      Card[0].classList.add("card-show_md");
-      Card[1].classList.add("card-show_md");
-    } else {
-      Card[0].classList.remove("card-show_md");
-      Card[1].classList.remove("card-show_md");
-    }
-    if (scrollY > 1900) {
-      Card[2].classList.add("card-show_md");
-      Card[3].classList.add("card-show_md");
-    } else {
-      Card[2].classList.remove("card-show_md");
-      Card[3].classList.remove("card-show_md");
-    }
-    if (scrollY > 2400) {
-      Card[4].classList.add("card-show_md");
-      Card[5].classList.add("card-show_md");
-    } else {
-      Card[4].classList.remove("card-show_md");
-      Card[5].classList.remove("card-show_md");
-    }
-  }
-  // Function Large
-  function Crad3() {
-    if (scrollY > 1300) {
-      Card[0].classList.add("card-show_xl");
-      Card[1].classList.add("card-show_xl");
-      Card[2].classList.add("card-show_xl");
-    } else {
-      Card[0].classList.remove("card-show_xl");
-      Card[1].classList.remove("card-show_xl");
-      Card[2].classList.remove("card-show_xl");
-    }
-    if (scrollY > 1800) {
-      Card[3].classList.add("card-show_xl");
-      Card[4].classList.add("card-show_xl");
-      Card[5].classList.add("card-show_xl");
-    } else {
-      Card[3].classList.remove("card-show_xl");
-      Card[4].classList.remove("card-show_xl");
-      Card[5].classList.remove("card-show_xl");
-    }
-  }
-  Crad1();
-  Crad2();
-  Crad3();
+    false;
+  });
 }
 
-let right = document.getElementById("right");
-let left = document.getElementById("left");
+// Start FeedBack
+let users = document.querySelectorAll(".slide-content .user");
+let span_Num = document.querySelectorAll(".span-toggle span");
+let usersCount = users.length;
+indexNext = 1;
+let Prev = document.getElementById("prev");
+let Next = document.getElementById("next");
 
-let cont1 = document.querySelector(".cont1");
-let cont2 = document.querySelector(".cont2");
+function Checker() {
+  removeActive();
+  users[indexNext - 1].classList.add("active");
+  span_Num[indexNext - 1].classList.add("active");
 
-let SpanOne = document.querySelector(".span-one");
-let SpanTwo = document.querySelector(".span-two");
+  if (indexNext == 1) {
+    Prev.classList.add("not_allowed");
+    Prev.classList.remove("active");
+    Next.classList.add("active");
+  } else {
+    Prev.classList.remove("not_allowed");
+    Prev.classList.add("active");
+  }
+  if (indexNext == usersCount) {
+    Next.classList.add("not_allowed");
+    Next.classList.remove("active");
+    Prev.classList.add("active");
+  } else {
+    Next.classList.remove("not_allowed");
+    Next.classList.add("active");
+  }
+}
 
-// Change FeedBack For Right
-right.onclick = function () {
-  cont1.classList.add("margin");
-  cont2.classList.add("margin");
-  left.style.opacity = ".5";
-  this.style.opacity = "1";
-  SpanTwo.style.opacity = "1";
-  SpanOne.style.opacity = ".5";
+// Remove All Active From Users
+function removeActive() {
+  users.forEach((user) => {
+    user.classList.remove("active");
+  });
+  span_Num.forEach((span) => {
+    span.classList.remove("active");
+  });
+}
+
+// Next User
+Next.onclick = () => {
+  if (Next.classList.contains("not_allowed")) {
+    return false;
+  } else {
+    indexNext++;
+    Checker();
+  }
 };
 
-// Change FeedBack For Left
-left.onclick = function () {
-  cont1.classList.remove("margin");
-  cont2.classList.remove("margin");
-  right.style.opacity = ".5";
-  this.style.opacity = "1";
-  SpanTwo.style.opacity = ".5";
-  SpanOne.style.opacity = "1";
+// Prev User
+Prev.onclick = () => {
+  if (Prev.classList.contains("not_allowed")) {
+    return false;
+  } else {
+    indexNext--;
+    Checker();
+  }
 };
 
-// Open FeedBace Left
-SpanOne.onclick = function () {
-  cont1.classList.remove("margin");
-  cont2.classList.remove("margin");
-  SpanTwo.style.opacity = ".5";
-  this.style.opacity = "1";
-  left.style.opacity = "1";
-  right.style.opacity = ".5";
-};
+// End FeedBack
 
-// Open FeedBace Right
-SpanTwo.onclick = function () {
-  cont1.classList.add("margin");
-  cont2.classList.add("margin");
-  SpanOne.style.opacity = ".5";
-  this.style.opacity = "1";
-  left.style.opacity = ".5";
-  right.style.opacity = "1";
-};
-
-// Controls For Open And Close List
-let True = document.getElementById("True");
-let False = document.getElementById("False");
+let toggle = document.getElementById("toggle");
 let List = document.getElementById("list");
+let container = document.querySelector(".container");
 
-// Open List
-True.onclick = function () {
-  this.classList.add("show");
-  False.classList.remove("show");
-  List.classList.add("show");
-};
-
-// Close List
-False.onclick = function () {
-  this.classList.add("show");
-  True.classList.remove("show");
-  List.classList.remove("show");
-};
+// Open List links
+toggle.addEventListener("click", () => {
+  toggle.classList.toggle("active");
+  List.classList.toggle("show");
+});
 
 // Close List By Link
 function CloseBars() {
-  True.classList.remove("show");
-  False.classList.add("show");
+  toggle.classList.remove("active");
   List.classList.remove("show");
 }
 
 // Close List Links By click AnyWay
 document.addEventListener("click", (e) => {
   e.stopPropagation;
-  if (e.target !== True && e.target !== False) {
-    True.classList.remove("show");
-    False.classList.add("show");
+  if (e.target !== toggle && e.target !== List && e.target !== container) {
+    toggle.classList.remove("active");
     List.classList.remove("show");
   }
 });
 
-// Counter For Goals
-let SectionWork = document.getElementById("work");
-let goals = document.querySelectorAll(".stat .goal");
-let started = false;
-
-function CountGoals(e) {
-  let goal = e.dataset.goal;
-  let count = setInterval(() => {
-    e.textContent++;
-    if (e.textContent == goal) {
-      clearInterval(count);
-    }
-  }, 1500 / goal);
-}
-
 // Scroll Window for Show Card Portfolio
-let Card_Portfolio = document.querySelectorAll("#cardFolio");
+function cardFolio() {
+  let portfolioCards = document.querySelectorAll(".portfolio-content .card");
+  portfolioCards.forEach((Card) => {
+    let CardOffSetTop = Card.offsetTop;
+    let CardOuterHeight = Card.offsetHeight;
+    let windowHeight = window.innerHeight;
+    let windowScrollTop = window.pageYOffset;
 
-function CardFolio() {
-  Card_Portfolio.forEach((e) => {
-    if (window.scrollY + 300 >= e.offsetTop) {
-      e.classList.add("show");
-    } else {
-      e.classList.remove("show");
+    if (
+      windowScrollTop >
+      CardOffSetTop - 150 + CardOuterHeight - windowHeight
+    ) {
+      Card.classList.add("show");
     }
+    false;
   });
 }
 
 // Scroll Window for Show Card Live
-let Card_Live = document.querySelectorAll("#cardLive");
+function cardLive() {
+  let liveCards = document.querySelectorAll(".live-content .card");
+  liveCards.forEach((Card) => {
+    let CardOffSetTop = Card.offsetTop;
+    let CardOuterHeight = Card.offsetHeight;
+    let windowHeight = window.innerHeight;
+    let windowScrollTop = window.pageYOffset;
 
-function CardLive() {
-  Card_Live.forEach((e) => {
-    if (window.scrollY + 300 >= e.offsetTop) {
-      e.classList.add("show");
-    } else {
-      e.classList.remove("show");
+    if (
+      windowScrollTop >
+      CardOffSetTop - 200 + CardOuterHeight - windowHeight
+    ) {
+      Card.classList.add("show");
     }
+    false;
   });
 }
 
 // Start Click Up
 let up = document.getElementById("up");
-
 function Up() {
   up.addEventListener("click", () => {
     window.scrollTo({

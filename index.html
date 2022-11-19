@@ -24,9 +24,10 @@
             <h2 id="active" class="headTitle">portfolio</h2>
          </a>
          <nav class="nav">
-            <div style="display: flex;">
-               <i id="True" class="fa-solid fas fa-bars"></i>
-               <i id="False" class="show fa-solid fas fas fa-times"></i>
+            <div id="toggle" class="spans">
+               <span></span>
+               <span></span>
+               <span></span>
             </div>
             <ul id="list" class="list">
                <li><a class="link" onclick="CloseBars()" href="#about">about</a></li>
@@ -175,7 +176,7 @@
             <span></span>
          </div>
          <div class="services-content">
-            <div id="card1" class="card">
+            <div class="card">
                <i class="fa-solid fa-briefcase"></i>
                <h2>web design</h2>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
@@ -183,7 +184,7 @@
                   provident vitae! Magni tempora perferendis eum non provident.
                </p>
             </div>
-            <div id="card2" class="card">
+            <div class="card">
                <i class="fa-solid fa-minimize"></i>
                <h2>responsive design</h2>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
@@ -191,7 +192,7 @@
                   provident vitae! Magni tempora perferendis eum non provident.
                </p>
             </div>
-            <div id="card3" class="card">
+            <div class="card">
                <i class="fa-solid fa-file-code"></i>
                <h2>web development</h2>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
@@ -199,7 +200,7 @@
                   provident vitae! Magni tempora perferendis eum non provident.
                </p>
             </div>
-            <div id="card4" class="card">
+            <div class="card">
                <i class="fa-solid fa-palette"></i>
                <h2>graphic design</h2>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
@@ -207,7 +208,7 @@
                   provident vitae! Magni tempora perferendis eum non provident.
                </p>
             </div>
-            <div id="card5" class="card">
+            <div class="card">
                <i class="fa-solid fa-panorama"></i>
                <h2>photography</h2>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
@@ -215,7 +216,7 @@
                   provident vitae! Magni tempora perferendis eum non provident.
                </p>
             </div>
-            <div id="card6" class="card">
+            <div class="card">
                <i class="fa-solid fa-money-bill-trend-up"></i>
                <h2>marketing services</h2>
                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni adipisci eaque autem fugiat!
@@ -271,7 +272,7 @@
             <span></span>
          </div>
          <div class="portfolio-content">
-            <div id="cardFolio" class="card">
+            <div class="card">
                <div class="image">
                   <img src="images/work-1.jpg">
                </div>
@@ -287,7 +288,7 @@
                   </div>
                </div>
             </div>
-            <div id="cardFolio" class="card">
+            <div class="card">
                <div class="image">
                   <img src="images/work-4.jpg">
                </div>
@@ -303,7 +304,7 @@
                   </div>
                </div>
             </div>
-            <div id="cardFolio" class="card">
+            <div class="card">
                <div class="image">
                   <img src="images/work-2.jpg">
                </div>
@@ -319,7 +320,7 @@
                   </div>
                </div>
             </div>
-            <div id="cardFolio" class="card">
+            <div class="card">
                <div class="image">
                   <img src="images/work-5.jpg">
                </div>
@@ -335,7 +336,7 @@
                   </div>
                </div>
             </div>
-            <div id="cardFolio" class="card">
+            <div class="card">
                <div class="image">
                   <img src="images/work-3.jpg">
                </div>
@@ -351,7 +352,7 @@
                   </div>
                </div>
             </div>
-            <div id="cardFolio" class="card">
+            <div class="card">
                <div class="image">
                   <img src="images/work-6.jpg">
                </div>
@@ -379,40 +380,67 @@
    </div>
 
    <!-- Start Section FeedBack -->
+
    <section class="section-5">
-      <div class="bg">
-         <div class="feedback-content">
-            <div class="main">
-               <i id="left" class="fa-solid fa-angle-left"></i>
-               <div class="cont">
-                  <div class="cont1">
-                     <img src="images/male.jpg">
-                     <h2>islam al-quraishi</h2>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, repudiandae quis! Quasi,
-                        eaque
-                        dicta.
-                        Autem vel corporis provident laborum dolorum.
-                     </p>
-                  </div>
-                  <div class="cont2">
-                     <img src="images/female.jpg">
-                     <h2>selma aksel</h2>
-                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, repudiandae quis! Quasi,
-                        eaque
-                        dicta.
-                        Autem vel corporis provident laborum dolorum.
-                     </p>
-                  </div>
-               </div>
-               <i id="right" class="fa-solid fa-angle-right"></i>
-               <div class="span">
-                  <span class="span-one"></span>
-                  <span class="span-two"></span>
-               </div>
-            </div>
+      <div class="bg"></div>
+      <div id="slide-number" class="slide-content">
+         <div class="user active">
+            <img src="images/male.jpg">
+            <h3>islam al-quraishi</h3>
+            <a href="#">
+               <i class="fa-brands fa-facebook"></i> facebook
+            </a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sed adipisci quis animi reiciendis ipsa!
+            </p>
+         </div>
+         <div class="user">
+            <img src="images/female.jpg">
+            <h3>selma aksel</h3>
+            <a href="#">
+               <i class="fa-brands fa-facebook"></i> facebook
+            </a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolorum, explicabo enim inventore at
+               ducimus
+               recusandae ipsam totam neque id iusto maxime harum consectetur repellat.
+            </p>
+         </div>
+         <div class="user">
+            <img src="images/male.jpg">
+            <h3>ahmed ragap</h3>
+            <a href="#">
+               <i class="fa-brands fa-facebook"></i> facebook
+            </a>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, repudiandae quis! Quasi,
+               eaque
+               dicta.
+               Autem vel corporis provident laborum dolorum.
+            </p>
          </div>
       </div>
+      <div class="slide-control">
+         <i id="prev" class="fa-solid fa-backward"></i>
+         <div class="span-toggle">
+            <span class="active">1</span>
+            <span>2</span>
+            <span>3</span>
+         </div>
+         <i id="next" class="active fa-solid fa-forward"></i>
+      </div>
    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    <!-- Start Section My live -->
    <section class="section-6" id="my live">
@@ -423,7 +451,7 @@
             <span></span>
          </div>
          <div class="live-content">
-            <div id="cardLive" class="card">
+            <div class="card">
                <div class="image">
                   <img class="one" src="images/post-1.jpg">
                </div>
@@ -442,7 +470,7 @@
                   <span><i class="fa-solid far fa-clock"></i> 10 min</span>
                </div>
             </div>
-            <div id="cardLive" class="card">
+            <div class="card">
                <div class="image">
                   <img class="two" src="images/post-2.jpg">
                </div>
@@ -461,7 +489,7 @@
                   <span><i class="fa-solid far fa-clock"></i> 10 min</span>
                </div>
             </div>
-            <div id="cardLive" class="card">
+            <div class="card">
                <div class="image">
                   <img class="three" src="images/post-3.jpg">
                </div>
