@@ -5,21 +5,21 @@
    <meta charset="UTF-8">
 
    <meta name="description" content="Falling Site">
-   <meat name="keywords" content="HTML5,html5,CSS3,css3,JS,js">
-      <meta name="author" content="Islam Al-Quraishi">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <meta name="keywords" content="HTML5,html5,CSS3,css3,JS,js">
+   <meta name="author" content="Islam Al-Quraishi">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Falling Site</title>
-      <link rel="icon" href="images/icon.png">
-      <!-- font awesome -->
-      <link rel="stylesheet" href="css/all.min.css">
-      <!-- normalize -->
-      <link rel="stylesheet" href="css/normalize.css">
-      <!-- style -->
-      <link rel="stylesheet" href="css/style.css">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Falling Site</title>
+   <link rel="icon" href="images/icon.png">
+   <!-- font awesome -->
+   <link rel="stylesheet" href="css/all.min.css">
+   <!-- normalize -->
+   <link rel="stylesheet" href="css/normalize.css">
+   <!-- style -->
+   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -30,11 +30,10 @@
          <a href="#home">
             <h2 id="active" class="headTitle">portfolio</h2>
          </a>
-         <nav class="nav">
-            <div id="toggle" class="spans">
-               <span></span>
-               <span></span>
-               <span></span>
+         <nav id="nav" class="nav">
+            <div id="toggle">
+               <i id="bars" class="rotate fa-solid fa-bars"></i>
+               <i id="xmark" class="fa-solid fa-xmark"></i>
             </div>
             <ul id="list" class="list">
                <li><a class="link" onclick="CloseBars()" href="#about">about</a></li>
@@ -296,22 +295,6 @@
             </div>
             <div class="card">
                <div class="image">
-                  <img src="images/work-4.jpg">
-               </div>
-               <div class="text">
-                  <div>
-                     <h2>Lorem impsum dolor</h2>
-                     <p><a href="#">web design</a> / 18 span. 2022</p>
-                  </div>
-                  <div>
-                     <span class="span-circle">
-                        <i class="fa-regular fa-plus"></i>
-                     </span>
-                  </div>
-               </div>
-            </div>
-            <div class="card">
-               <div class="image">
                   <img src="images/work-2.jpg">
                </div>
                <div class="text">
@@ -328,7 +311,7 @@
             </div>
             <div class="card">
                <div class="image">
-                  <img src="images/work-5.jpg">
+                  <img src="images/work-3.jpg">
                </div>
                <div class="text">
                   <div>
@@ -344,7 +327,23 @@
             </div>
             <div class="card">
                <div class="image">
-                  <img src="images/work-3.jpg">
+                  <img src="images/work-4.jpg">
+               </div>
+               <div class="text">
+                  <div>
+                     <h2>Lorem impsum dolor</h2>
+                     <p><a href="#">web design</a> / 18 span. 2022</p>
+                  </div>
+                  <div>
+                     <span class="span-circle">
+                        <i class="fa-regular fa-plus"></i>
+                     </span>
+                  </div>
+               </div>
+            </div>
+            <div class="card">
+               <div class="image">
+                  <img src="images/work-5.jpg">
                </div>
                <div class="text">
                   <div>
@@ -381,7 +380,7 @@
    <!-- Start Spicial -> FeedBack -->
 
    <div style="margin-bottom: 50px;" class="spicial" id="feedback">
-      <h2>portfolio</h2>
+      <h2>feedBack</h2>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
       <span></span>
    </div>
@@ -394,18 +393,14 @@
          <div class="user active">
             <img src="images/male.jpg">
             <h3>islam al-quraishi</h3>
-            <a href="#">
-               <i class="fa-brands fa-facebook"></i> facebook
-            </a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum sed adipisci quis animi reiciendis ipsa!
             </p>
          </div>
          <div class="user">
             <img src="images/female.jpg">
             <h3>selma aksel</h3>
-            <a href="#">
-               <i class="fa-brands fa-facebook"></i> facebook
-            </a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis dolorum, explicabo enim inventore at
                ducimus
                recusandae ipsam totam neque id iusto maxime harum consectetur repellat.
@@ -414,13 +409,10 @@
          <div class="user">
             <img src="images/male.jpg">
             <h3>ahmed ragap</h3>
-            <a href="#">
-               <i class="fa-brands fa-facebook"></i> facebook
-            </a>
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates, repudiandae quis! Quasi,
                eaque
                dicta.
-               Autem vel corporis provident laborum dolorum.
             </p>
          </div>
       </div>
@@ -565,7 +557,11 @@
 
    <!-- Start Btn Up -->
 
-   <button id="up"><i class="fa-solid fa-angles-up"></i></button>
+   <div id="up" class="ScrollToTop">
+      <div class="inner">
+        <i class="fa-solid fa-angles-up"></i>
+      </div>
+    </div>
 
    <!-- Start Footer -->
 
