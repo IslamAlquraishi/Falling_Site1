@@ -7,16 +7,8 @@ onscroll = function () {
   card_Scroll(Cards_Portfolio, 200);
   card_Scroll(Cards_Live, 200);
 
-  // Counter For Goals
-  // if (window.scrollY + 350 >= SectionWork.offsetTop) {
-  //   if (started == false) {
-  //     goals.forEach((goal) => {
-  //       countGoals(goal);
-  //     });
-  //   }
-  //   started = true;
-  // }
-  get()
+  // Scroll Counter
+  Counter();
 
   // Progress Width For Span
   skills_Span();
@@ -137,14 +129,15 @@ function countGoals(e) {
   }, 1500 / goal);
 }
 
-function get() {
+// Scroll Counter
+function Counter() {
   let SectionWorkOffSetTop = SectionWork.offsetTop;
   let SectionWorkOuterHeight = SectionWork.offsetHeight;
   let windowHeight = window.innerHeight;
   let windowScrollTop = window.pageYOffset;
 
   if (
-    windowScrollTop + 400 >
+    windowScrollTop >
     SectionWorkOffSetTop + SectionWorkOuterHeight - windowHeight
   ) {
     if (started == false) {
