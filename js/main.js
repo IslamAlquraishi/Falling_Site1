@@ -103,7 +103,7 @@ function skills_Span() {
 
   if (
     windowScrollTop >
-    SkillsOffSetTop - 100 + SkillsOuterHeight - windowHeight
+    SkillsOffSetTop + 100 + SkillsOuterHeight - windowHeight
   ) {
     let AllSkills_Span = document.querySelectorAll(
       ".card .skill-progress span"
