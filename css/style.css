@@ -1829,11 +1829,11 @@ body {
 /* Start Btn Up */
 
 .ScrollToTop {
-   width: 50px;
-   height: 50px;
+   width: 70px;
+   height: 70px;
    transition: .3s;
-   padding-left: 5px;
-   padding-top: 5px;
+   padding-top: 6px;
+   padding-left: 6px;
    border-radius: 50%;
 
    position: fixed;
@@ -1843,29 +1843,29 @@ body {
 }
 
 .ScrollToTop .inner {
-   width: 40px;
-   height: 40px;
+   width: 58px;
+   height: 58px;
    color: #fff;
    cursor: pointer;
-   font-size: 14px;
+   font-size: 20px;
    text-align: center;
    border-radius: 50%;
-   line-height: 40px;
+   line-height: 58px;
    background: var(--dark-color);
 }
 
 @media (max-width: 770px) {
    .ScrollToTop {
-      width: 35px;
-      height: 35px;
-      padding-left: 2.5px;
-      padding-top: 2.5px;
+      width: 55px;
+      height: 55px;
+      padding-left: 4px;
+      padding-top: 4px;
    }
 
    .ScrollToTop .inner {
-      width: 30px;
-      height: 30px;
-      line-height: 32.5px;
+      width: 46px;
+      height: 46px;
+      line-height: 46px;
    }
 }
 
