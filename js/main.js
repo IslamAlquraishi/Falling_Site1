@@ -8,14 +8,15 @@ onscroll = function () {
   card_Scroll(Cards_Live, 200);
 
   // Counter For Goals
-  if (window.scrollY + 250 >= SectionWork.offsetTop) {
-    if (started == false) {
-      goals.forEach((goal) => {
-        countGoals(goal);
-      });
-    }
-    started = true;
-  }
+  // if (window.scrollY + 350 >= SectionWork.offsetTop) {
+  //   if (started == false) {
+  //     goals.forEach((goal) => {
+  //       countGoals(goal);
+  //     });
+  //   }
+  //   started = true;
+  // }
+  get()
 
   // Progress Width For Span
   skills_Span();
@@ -134,6 +135,25 @@ function countGoals(e) {
       clearInterval(count);
     }
   }, 1500 / goal);
+}
+
+function get() {
+  let SectionWorkOffSetTop = SectionWork.offsetTop;
+  let SectionWorkOuterHeight = SectionWork.offsetHeight;
+  let windowHeight = window.innerHeight;
+  let windowScrollTop = window.pageYOffset;
+
+  if (
+    windowScrollTop + 400 >
+    SectionWorkOffSetTop + SectionWorkOuterHeight - windowHeight
+  ) {
+    if (started == false) {
+      goals.forEach((goal) => {
+        countGoals(goal);
+      });
+    }
+    started = true;
+  }
 }
 
 // Start FeedBack
