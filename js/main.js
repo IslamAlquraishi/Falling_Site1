@@ -8,7 +8,7 @@ onscroll = function () {
   card_Scroll(Cards_Live, 200);
 
   // Counter For Goals
-  if (window.scrollY + 150 >= SectionWork.offsetTop) {
+  if (window.scrollY + 250 >= SectionWork.offsetTop) {
     if (started == false) {
       goals.forEach((goal) => {
         countGoals(goal);
@@ -103,7 +103,7 @@ function skills_Span() {
 
   if (
     windowScrollTop >
-    SkillsOffSetTop + 100 + SkillsOuterHeight - windowHeight
+    SkillsOffSetTop - 200 + SkillsOuterHeight - windowHeight
   ) {
     let AllSkills_Span = document.querySelectorAll(
       ".card .skill-progress span"

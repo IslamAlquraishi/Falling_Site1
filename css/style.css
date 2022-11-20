@@ -1854,7 +1854,7 @@ body {
    background: var(--dark-color);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 770px) {
    .ScrollToTop {
       width: 35px;
       height: 35px;
